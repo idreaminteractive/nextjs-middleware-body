@@ -14,5 +14,10 @@ export function middleware(req: NextRequest, ev: NextFetchEvent) {
    * await res.text() // blank string
    *
    */
-  return new Response("Hello, world!");
+  return new Response(JSON.stringify({ message: "hello world!" }), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }
